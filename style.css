@@ -1,0 +1,41 @@
+/* Layout & basic styling for Othello board */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.board-wrap {
+    padding: 10px;
+    background: #0a3d1a;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+    background: #0a3d1a;
+}
+
+.square {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    background: #069d77;   /* board tile color */
+    border: none;
+    cursor: pointer;
+    display: flex;         /* center the circle inside */
+    justify-content: center;
+    align-items: center;
+}
+
+/* This acts as the stone */
+.piece {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
+.piece.black { background: #000; }
+.piece.white { background: #fff; }

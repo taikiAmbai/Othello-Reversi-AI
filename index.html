@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Othello</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="board-wrap">
+        <div class="board">
+            <!-- For some reason I decided to use plain HTML, so all 64 buttons :/ -->
+            <!-- 8x8 grid of buttons -->
+            <!-- Coordinates are based on array indices: 
+                top-left = 00, bottom-right = 77
+                The first digit is the row (0–7), and the second digit is the column (0–7).
+            -->
+
+            <!-- Row 0 -->
+            <button class="square" id="00"></button>
+            <button class="square" id="01"></button>
+            <button class="square" id="02"></button>
+            <button class="square" id="03"></button>
+            <button class="square" id="04"></button>
+            <button class="square" id="05"></button>
+            <button class="square" id="06"></button>
+            <button class="square" id="07"></button>
+
+            <!-- Row 1 -->
+            <button class="square" id="10"></button>
+            <button class="square" id="11"></button>
+            <button class="square" id="12"></button>
+            <button class="square" id="13"></button>
+            <button class="square" id="14"></button>
+            <button class="square" id="15"></button>
+            <button class="square" id="16"></button>
+            <button class="square" id="17"></button>
+
+            <!-- Row 2 -->
+            <button class="square" id="20"></button>
+            <button class="square" id="21"></button>
+            <button class="square" id="22"></button>
+            <button class="square" id="23"></button>
+            <button class="square" id="24"></button>
+            <button class="square" id="25"></button>
+            <button class="square" id="26"></button>
+            <button class="square" id="27"></button>
+
+            <!-- Row 3 -->
+            <button class="square" id="30"></button>
+            <button class="square" id="31"></button>
+            <button class="square" id="32"></button>
+            <button class="square" id="33"><div class="piece white"></div></button>
+            <button class="square" id="34"><div class="piece black"></div></button>
+            <button class="square" id="35"></button>
+            <button class="square" id="36"></button>
+            <button class="square" id="37"></button>
+
+            <!-- Row 4 -->
+            <button class="square" id="40"></button>
+            <button class="square" id="41"></button>
+            <button class="square" id="42"></button>
+            <button class="square" id="43"><div class="piece black"></div></button>
+            <button class="square" id="44"><div class="piece white"></div></button>
+            <button class="square" id="45"></button>
+            <button class="square" id="46"></button>
+            <button class="square" id="47"></button>
+
+            <!-- Row 5 -->
+            <button class="square" id="50"></button>
+            <button class="square" id="51"></button>
+            <button class="square" id="52"></button>
+            <button class="square" id="53"></button>
+            <button class="square" id="54"></button>
+            <button class="square" id="55"></button>
+            <button class="square" id="56"></button>
+            <button class="square" id="57"></button>
+
+            <!-- Row 6 -->
+            <button class="square" id="60"></button>
+            <button class="square" id="61"></button>
+            <button class="square" id="62"></button>    
+            <button class="square" id="63"></button>
+            <button class="square" id="64"></button>
+            <button class="square" id="65"></button>
+            <button class="square" id="66"></button>
+            <button class="square" id="67"></button>
+
+            <!-- Row 7 -->
+            <button class="square" id="70"></button>
+            <button class="square" id="71"></button>
+            <button class="square" id="72"></button>
+            <button class="square" id="73"></button>
+            <button class="square" id="74"></button>
+            <button class="square" id="75"></button>
+            <button class="square" id="76"></button>
+            <button class="square" id="77"></button>
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>
