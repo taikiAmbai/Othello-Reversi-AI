@@ -39,3 +39,8 @@ body {
 
 .piece.black { background: #000; }
 .piece.white { background: #fff; }
+.piece.possible {
+    border: 2px solid rgb(87, 87, 87);
+    background: transparent;
+    opacity: 0.8;
+}
