@@ -41,6 +41,7 @@ body {
     width: 100%;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    position: relative;
 }
 
 .piece.black { background: #000; border: 2px solid black;}
@@ -50,6 +51,17 @@ body {
     background: transparent;
     opacity: 0.8;
 }
+
+.justPlayed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfectly center it */
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: red;
+  }
 
 
 

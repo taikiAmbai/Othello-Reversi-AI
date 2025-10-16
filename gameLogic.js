@@ -96,32 +96,35 @@ function commitMove(board, x, y, color){
 
     const moves = possibleMoves(board, color); // get all possible moves
     clearCells(moves);
+    removeAllRedDots();
 
     if (color == -1){ // place a black
-        turnBlack(x, y)
-        board[x][y] = -1
+        turnBlack(x, y);
+        board[x][y] = -1;
     } 
     else { // place a white
-        turnWhite(x, y)
-        board[x][y] = 1
+        turnWhite(x, y);
+        board[x][y] = 1;
     }
 
-    flip(board, color, x, y, true)
-    updateScore(board)
+    addRedDot(x,y);
+
+    flip(board, color, x, y, true);
+    updateScore(board);
 
     color *= -1;
     if (!moveExists(board, color)){
         if (!moveExists(board, color*-1)) {
-            console.log("game over!")
-            color = 0
+            console.log("game over!");
+            color = 0;
         }
         else {
-            console.log("SKIP!!")
+            console.log("SKIP!!");
         }
         color *= -1;
     }
 
     updateTurnDisplay(color);
 
-    return(board, color)
+    return(board, color);
 }

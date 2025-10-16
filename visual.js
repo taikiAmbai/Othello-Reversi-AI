@@ -48,6 +48,20 @@ function turnWhite(x, y){
     square.appendChild(stone);
 }
 
+function addRedDot(x,y){
+    const square = document.getElementById(`${x}${y}`);
+    const stone = square.querySelector('.piece');
+
+    const dot = document.createElement('div');
+    dot.className = 'justPlayed';
+    stone.appendChild(dot);
+}
+
+function removeAllRedDots() {
+    const dots = document.querySelectorAll('.justPlayed');
+    dots.forEach(dot => dot.remove());
+}
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
