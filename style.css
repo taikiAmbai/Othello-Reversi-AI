@@ -2,9 +2,14 @@
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;   /* stack elements vertically */
+    justify-content: center;  /* center vertically */
+    align-items: center;      /* center horizontally */
+    min-height: 100vh;        /* ensure full-screen height */
+    background: grey;
+    gap: 20px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 .board-wrap {
@@ -22,12 +27,13 @@ body {
 .square {
     width: 60px;
     aspect-ratio: 1 / 1;
-    background: #069d77;   /* board tile color */
+    background: #068062;   /* board tile color */
     border: none;
     cursor: pointer;
     display: flex;         /* center the circle inside */
     justify-content: center;
     align-items: center;
+    outline: none;
 }
 
 /* This acts as the stone */
@@ -37,10 +43,62 @@ body {
     border-radius: 50%;
 }
 
-.piece.black { background: #000; }
-.piece.white { background: #fff; }
+.piece.black { background: #000; border: 2px solid black;}
+.piece.white { background: #fff; border: 2px solid white;}
 .piece.possible {
     border: 2px solid rgb(87, 87, 87);
     background: transparent;
     opacity: 0.8;
 }
+
+
+
+.panel{
+    width: 494px;
+    padding: 10px;
+    background: rgb(162, 160, 160);
+    color: inherit;
+}
+
+.panel-row{
+    display: flex;
+    gap: 20px;
+    padding: 2px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+  
+/* Score block */
+.score{ 
+    display: flex; 
+    gap: 12px; 
+    align-items: center; 
+}
+
+
+/* Selector + button (very bland defaults) */
+
+.select{ 
+    background: transparent; 
+    color: inherit; 
+    border: 1px solid #ccc; 
+    padding: 4px 6px; 
+    border-radius: 4px; 
+    outline: none;
+    
+}
+
+.btn{ 
+    background: transparent; 
+    color: inherit; 
+    border: 1px solid #ccc; 
+    padding: 6px 10px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    outline: none;
+}
+
+/* Small colored dots for score legend */
+.dot{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot-white{ background: #fff; border: 1px solid #ccc; }
+.dot-black{ background: #000; border: 1px solid #ccc; }
