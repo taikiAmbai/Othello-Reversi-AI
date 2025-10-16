@@ -7,6 +7,45 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <!-- Place this near your board, e.g. above it or in a sidebar -->
+    <section class="panel">
+        <div class="panel-row">
+        <div class="score">
+            <div class="score-item">
+                <span class="dot dot-white" aria-hidden="true"></span>
+                <span class="label">White</span>
+                <span id="score-white">2</span>
+            </div>
+                <div class="score-item">
+                <span class="dot dot-black" aria-hidden="true"></span>
+                <span class="label">Black</span>
+                <span id="score-black">2</span>
+            </div>
+        </div>
+    
+        <div class="turn">
+            <span class="turn-label">Turn:</span>
+            <span id="turn-indicator">Black</span>
+        </div>
+        </div>
+    
+        <div class="panel-row">
+        <label for="ai-select" class="select-label">Opponent:</label>
+        <select id="ai-select" class="select">
+            <option value="human">Human</option>
+            <option value="random">Random</option>
+            <option value="greedy">Greedy (max flips)</option>
+            <option value="minimax-2">Minimax (depth 2)</option>
+            <option value="minimax-4">Minimax (depth 4)</option>
+            <option value="mcts">Monte Carlo (basic)</option>
+        </select>
+    
+        <button id="new-game" class="btn">New Game</button>
+        </div>
+    </section>
+
+
     <div class="board-wrap">
         <div class="board">
             <!-- For some reason I decided to use plain HTML, so all 64 buttons :/ -->
@@ -97,6 +136,8 @@
             <button class="square" id="77"></button>
         </div>
     </div>
-    <script src="logic.js"></script>
+    <script src="gameLogic.js"></script>
+    <script src="gamePlay.js"></script>
+    <script src="visual.js"></script>
 </body>
 </html>
