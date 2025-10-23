@@ -1,15 +1,12 @@
-document.getElementById("new-game").addEventListener("click", async () => {
-    resetGame();
-});
+
 
 
 
 // Functions for adding/removing visual elements ___________________________
 
-function clearCells(coordinates) { // clears the possible move outlines
+function clearCells(coordinates) { // clears all cells
     for (const [x, y] of coordinates) {
         const square = document.getElementById(`${x}${y}`);
-        if (!square) return;
 
         square.innerHTML = "";
     }
@@ -18,7 +15,6 @@ function clearCells(coordinates) { // clears the possible move outlines
 function addNewOutlines(coordinates) {
     for (const [x, y] of coordinates) {
         const square = document.getElementById(`${x}${y}`);
-        if (!square) return;
 
         const stone = document.createElement('div');
         stone.className = 'piece possible';
@@ -28,7 +24,6 @@ function addNewOutlines(coordinates) {
 
 function turnBlack(x, y){
     const square = document.getElementById(`${x}${y}`);
-    if (!square) return;
 
     square.innerHTML = "";
 
@@ -39,7 +34,6 @@ function turnBlack(x, y){
 
 function turnWhite(x, y){
     const square = document.getElementById(`${x}${y}`);
-    if (!square) return;
 
     square.innerHTML = "";
 
@@ -120,9 +114,11 @@ function resetGame() {
     clearBoardDOM();
 
     // reset model
-    board = initialBoard
-
     drawInitialPosition();
+    board = makeInitialBoard();
+
+    
+    console.log(board)
 
     // reset turn to Black to start
     turn = -1;

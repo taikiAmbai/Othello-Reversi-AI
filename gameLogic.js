@@ -60,6 +60,8 @@ function possibleMoves(board, color){ // all possible moves
     return valids;
 }
 
+
+// flips all stones that are surrounded due to a specific move
 function flip(board, color, x, y, show){
     surroundedLines = checkAllDir(board, color, x, y)
     for (const line of surroundedLines) {
@@ -95,8 +97,8 @@ function commitMove(board, x, y, color){
     // this is called to show a move on the board
 
     const moves = possibleMoves(board, color); // get all possible moves
-    clearCells(moves);
-    removeAllRedDots();
+    clearCells(moves); //remove the outline
+    removeAllRedDots(); //remove red dot for just played
 
     if (color == -1){ // place a black
         turnBlack(x, y);
@@ -107,11 +109,13 @@ function commitMove(board, x, y, color){
         board[x][y] = 1;
     }
 
-    addRedDot(x,y);
+    addRedDot(x,y); // add red dot to spot just played
 
-    flip(board, color, x, y, true);
+    flip(board, color, x, y, true); //flip the stones it now surrounds
     updateScore(board);
 
+    //check if that causes the game to end, or if the 
+    //  opponent has no possible moves
     color *= -1;
     if (!moveExists(board, color)){
         if (!moveExists(board, color*-1)) {

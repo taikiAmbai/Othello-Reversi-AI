@@ -8,39 +8,50 @@
 </head>
 <body>
 
-    <!-- Place this near your board, e.g. above it or in a sidebar -->
     <section class="panel">
         <div class="panel-row">
-        <div class="score">
-            <div class="score-item">
-                <span class="dot dot-white" aria-hidden="true"></span>
-                <span class="label">White</span>
-                <span id="score-white">2</span>
-            </div>
+            <div class="score">
                 <div class="score-item">
-                <span class="dot dot-black" aria-hidden="true"></span>
-                <span class="label">Black</span>
-                <span id="score-black">2</span>
+                    <span class="dot dot-black" aria-hidden="true"></span>
+                    <span class="label">Black</span>
+                    <span id="score-black">2</span>
+                </div>
+                <div class="score-item">
+                    <span class="dot dot-white" aria-hidden="true"></span>
+                    <span class="label">White</span>
+                    <span id="score-white">2</span>
+                </div>
             </div>
-        </div>
-    
-        <div class="turn">
-            <span class="turn-label">Turn:</span>
-            <span id="turn-indicator">Black</span>
-        </div>
+        
+            <div class="turn">
+                <span class="turn-label">Turn:</span>
+                <span id="turn-indicator">Black</span>
+            </div>
         </div>
     
         <div class="panel-row">
-        <label for="ai-select" class="select-label">Opponent:</label>
-        <select id="ai-select" class="select">
-            <option value="random">Random</option>
-            <option value="greedy">Greedy (max flips)</option>
-            <option value="minimax-2">Minimax (depth 2)</option>
-            <option value="minimax-4">Minimax (depth 4)</option>
-            <option value="mcts">Monte Carlo (basic)</option>
-        </select>
+            <span class="dot dot-black" aria-hidden="true"></span>
+            <select id="ai-black" class="select">
+                <option value="Human" selected>Human</option>
+                <option value="Random">Random</option>
+                <option value="Greedy">Greedy (max flips)</option>
+                <option value="Minimax-2">Minimax (depth 2)</option>
+                <option value="Minimax-4">Minimax (depth 4)</option>
+                <option value="Mcts">Monte Carlo (basic)</option>
+            </select>
+
+            <span class="dot dot-white" aria-hidden="true"></span>
+            </select>
+                <select id="ai-white" class="select">
+                <option value="Human" selected>Human</option>
+                <option value="Random">Random</option>
+                <option value="Greedy">Greedy (max flips)</option>
+                <option value="Minimax-2">Minimax (depth 2)</option>
+                <option value="Minimax-4">Minimax (depth 4)</option>
+                <option value="Mcts">Monte Carlo (basic)</option>
+            </select>
     
-        <button id="new-game" class="btn">New Game</button>
+            <button id="new-game" class="btn">New Game</button>
         </div>
     </section>
 

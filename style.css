@@ -61,23 +61,34 @@ body {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     background-color: red;
-  }
-
-
-
-.panel{
-    width: 494px;
-    padding: 10px;
-    background: rgb(162, 160, 160);
-    color: inherit;
 }
 
-.panel-row{
+
+
+.panel {
+    width: 478px;
+    padding: 14px 18px;
+    background:  #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    color: #222;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.panel-row {
     display: flex;
-    gap: 20px;
-    padding: 2px;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+}
+
+/* add spacing only between rows */
+.panel-row:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
   
 /* Score block */
@@ -91,24 +102,52 @@ body {
 /* Selector + button (very bland defaults) */
 
 .select{ 
+    width: 140px;
     background: transparent; 
     color: inherit; 
     border: 1px solid #ccc; 
     padding: 4px 6px; 
     border-radius: 4px; 
     outline: none;
-    
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.btn{ 
-    background: transparent; 
-    color: inherit; 
-    border: 1px solid #ccc; 
-    padding: 6px 10px; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    outline: none;
+.select-label {
+    margin-right: 4px;
 }
+
+.choose{
+    width:200px;
+}
+
+
+
+
+body, button, select, label, span, div {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: #111;
+}
+
+.btn, .select {
+    font-size: 1rem;
+    font-weight: 500;
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:hover, .select:hover {
+  background: #eaeaea;
+  border-color: #999;
+}
+
 
 /* Small colored dots for score legend */
 .dot{ width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
