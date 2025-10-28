@@ -117,9 +117,6 @@ function resetGame() {
     drawInitialPosition();
     board = makeInitialBoard();
 
-    
-    console.log(board)
-
     // reset turn to Black to start
     turn = -1;
 

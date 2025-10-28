@@ -76,6 +76,7 @@ function flip(board, color, x, y, show){
             }
         }
     }
+    return board;
 }
 
 
@@ -111,7 +112,7 @@ function commitMove(board, x, y, color){
 
     addRedDot(x,y); // add red dot to spot just played
 
-    flip(board, color, x, y, true); //flip the stones it now surrounds
+    board = flip(board, color, x, y, true); //flip the stones it now surrounds
     updateScore(board);
 
     //check if that causes the game to end, or if the 
